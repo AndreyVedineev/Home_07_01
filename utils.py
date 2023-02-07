@@ -41,16 +41,14 @@ def get_profession_by_title(title):  # Получает словарь с инф
             i = file.index(data)
             return file[i]
     else:
-        print("Такого студента нет!")
+        print("Такой профессии нет!")
 
 
 def check_fitness(student, profession):
     """
     которая получив студента и профессию, возвращала бы словарь типа:
     {
-      "has": ["Python", "Linux"],
-      "lacks": ["Docker, SQL"],
-      "fit_percent": 50
+      "has": ["Python", "Linux"], "lacks": ["Docker, SQL"], "fit_percent": 50
     }
     """
     student_set = set(student)  # преобразуем в множестово
@@ -66,4 +64,4 @@ def check_fitness(student, profession):
     return student_in_profession
 
 
-print(check_fitness(["Python", "Go", "Linux"], ['Python', 'Linux', 'Docker', 'SQL', 'Flask']))
+# print(check_fitness(["Python", "Go", "Linux"], ['Python', 'Linux', 'Docker', 'SQL', 'Flask']))

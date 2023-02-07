@@ -1,6 +1,6 @@
 import os
 
-from utils import get_student_by_pk, get_profession_by_title
+from utils import get_student_by_pk, get_profession_by_title, check_fitness
 
 path_student = os.path.join('data', 'students.json')
 path_professions = os.path.join('data', 'professions.json')
@@ -14,12 +14,12 @@ print(f"Знает {' '.join(student['skills'])}")
 professions_student = input(f"Выберите специальность для оценки студента {student['full_name']}: ").capitalize().strip()
 professions = get_profession_by_title(professions_student)
 
-a = student['skills']
-b = professions['skills']
-print(a)
-print(b)
+check = check_fitness(student['skills'], professions['skills'])
+print(f"Пригодность: {check['fit_percent']}")
+print(f"{student['full_name']} знает {' '.join(check['has'])}")
+print(f"{student['full_name']} не знает {' '.join(check['lacks'])}")
 
-# Программа: Пригодность 50%
+
 # Программа: Jane Snake знает Python, Linux
 # Программа: Jane Snake не знает Docker, SQL
 #
