@@ -74,10 +74,7 @@ def check_fitness(student, profession):
     fit_percent = len(has) * 100 / len(profession_set)  # какой процент знаний есть студента для выбранной профессии
     # сборка словаря
     student_in_profession = {}
-    if fit_percent > 0:
-        student_in_profession["has"] = has
-        student_in_profession["lacks"] = lacks
-    else:
-        student_in_profession["has"] = "ни чего нужного нам!"
+    student_in_profession["has"] = has
+    student_in_profession["lacks"] = lacks
     student_in_profession["fit_percent"] = fit_percent
     return student_in_profession
