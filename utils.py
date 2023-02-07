@@ -32,7 +32,6 @@ def get_student_by_pk(pk):  # Получает словарь с данными 
             return file[i]
     else:
         print("Такого студента нет!")
-print(get_student_by_pk(1))
 
 def get_profession_by_title(title):  # Получает словарь с инфо о профе по названию
     file = load_professions(path_professions)

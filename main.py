@@ -11,4 +11,8 @@ student = get_student_by_pk(number_student)
 print(f"Студент {student['full_name']}")
 print(f"Знает {' '.join(student['skills'])}")
 
+professions_student = input(f"Выберите специальность для оценки студента {student['full_name']} ")
 
+
+# Программа: Выберите специальность для оценки студента Jane Snake
+# Пользователь: Backend
