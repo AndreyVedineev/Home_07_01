@@ -43,14 +43,14 @@ def get_profession_by_title(title):  # Получает словарь с инф
         print("Такого студента нет!")
 
 
-# def check_fitness(student, profession):
-#     """
-#     которая получив студента и профессию, возвращала бы словарь типа:
-#     {
-#       "has": ["Python", "Linux"],
-#       "lacks": ["Docker, SQL"],
-#       "fit_percent": 50
-#     }
-#     Эта функция должна использовать методы множеств.
-#     """
-#     pass
+def check_fitness(student, profession):
+    """
+    которая получив студента и профессию, возвращала бы словарь типа:
+    {
+      "has": ["Python", "Linux"],
+      "lacks": ["Docker, SQL"],
+      "fit_percent": 50
+    }
+    Эта функция должна использовать методы множеств.
+    """
+
