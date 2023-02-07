@@ -33,6 +33,7 @@ def get_student_by_pk(pk):  # Получает словарь с данными 
     else:
         print("Такого студента нет!")
 
+
 def get_profession_by_title(title):  # Получает словарь с инфо о профе по названию
     file = load_professions(path_professions)
     for data in file:
@@ -51,6 +52,18 @@ def check_fitness(student, profession):
       "lacks": ["Docker, SQL"],
       "fit_percent": 50
     }
-    Эта функция должна использовать методы множеств.
     """
+    student_set = set(student)  # преобразуем в множестово
+    profession_set = set(profession)  # преобразуем в множестово
+    has = list(student_set.intersection(profession_set))  # пересечение, то чем владеет студент
+    lacks = list(profession_set.difference(student_set))  # разницаб то чего не хватает для выбранной профессии
+    fit_percent = len(has) * 100 / len(profession_set)  # какой процент знаний есть студента для выбранной профессии
+    # сборка словаря
+    student_in_profession = {}
+    student_in_profession["has"] = has
+    student_in_profession["lacks"] = lacks
+    student_in_profession["fit_percent"] = fit_percent
+    return student_in_profession
 
+
+print(check_fitness(["Python", "Go", "Linux"], ['Python', 'Linux', 'Docker', 'SQL', 'Flask']))
