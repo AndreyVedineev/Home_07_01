@@ -1,8 +1,8 @@
 import json
 import os
 
-# path_student = os.path.join('data', 'students.json')
-# path_professions = os.path.join('data', 'professions.json')
+path_student = os.path.join('data', 'students.json')
+path_professions = os.path.join('data', 'professions.json')
 
 
 def load_student_file(path):  # Загружает список студентов из файла
@@ -37,12 +37,14 @@ def get_student_by_pk(pk):  #
     :return:возвращает список: данные о студенте
     """
     file = load_student_file(path_student)
+
     for data in file:
         if data["pk"] == pk:
             i = file.index(data)
             return file[i]
     else:
         print("У нас нет такого студента")
+        quit()
 
 
 def get_profession_by_title(title):  #
@@ -57,6 +59,7 @@ def get_profession_by_title(title):  #
             return file[i]
     else:
         print("У нас нет такой специальности")
+        quit()
 
 
 def check_fitness(student, profession):
@@ -71,7 +74,10 @@ def check_fitness(student, profession):
     fit_percent = len(has) * 100 / len(profession_set)  # какой процент знаний есть студента для выбранной профессии
     # сборка словаря
     student_in_profession = {}
-    student_in_profession["has"] = has
-    student_in_profession["lacks"] = lacks
+    if fit_percent > 0:
+        student_in_profession["has"] = has
+        student_in_profession["lacks"] = lacks
+    else:
+        student_in_profession["has"] = "ни чего нужного нам!"
     student_in_profession["fit_percent"] = fit_percent
     return student_in_profession
