@@ -64,7 +64,7 @@ def get_profession_by_title(title):  #
 
 def check_fitness(student, profession):
     """
-    которая получив студента и профессию, возвращает словарь типа:
+    получив студента и профессию, возвращает словарь типа:
     {"has": ["Python", "Linux"], "lacks": ["Docker, SQL"], "fit_percent": 50}
     """
     student_set = set(student)  # преобразуем в множестово
