@@ -1,6 +1,7 @@
 from utils import get_student_by_pk, get_profession_by_title, check_fitness
 
-if __name__ == '__main__':
+
+def main():
     number_student = int(input("Введите номер студента: ").capitalize().strip())
     student = get_student_by_pk(number_student)
 
@@ -16,3 +17,7 @@ if __name__ == '__main__':
     print(f"Пригодность: {check['fit_percent']}")
     print(f"{student['full_name']} знает {' '.join(check['has'])}")
     print(f"{student['full_name']} не знает {' '.join(check['lacks'])}")
+
+
+if __name__ == '__main__':
+    main()
